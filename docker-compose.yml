@@ -1,0 +1,12 @@
+version: '3'
+services:
+  react:
+    build: 
+      context: .
+      dockerfile : Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - /usr/src/app/node_modules # 여기는 참조하지 않겠다
+      - ./:/usr/src/app #./ 이거를 /usr/src/app으로
+    stdin_open : true #리액트 앱 끌때 필요
